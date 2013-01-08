@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dimoshka.ua.list_orders"
+    android:versionCode="59"
+    android:versionName="1.2.1" >
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="15" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <application
+        android:allowBackup="true"
+        android:allowClearUserData="true"
+        android:enabled="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/l_main"
+        android:theme="@style/Theme.Sherlock.Light" >
+        <activity
+            android:name="com.dimoshka.ua.list_orders.main"
+            android:label="@string/l_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.orders_manager"
+            android:label="@string/l_orders_manager">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.orders"
+            android:label="@string/l_orders">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.users"
+            android:label="@string/l_users">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.items"
+            android:label="@string/l_items">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.preferences"
+            android:label="@string/l_preferences">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.orders_details"
+            android:label="@string/l_order_details">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.items_manager"
+            android:label="@string/l_items_manager">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.filtr"
+            android:label="@string/l_filtr">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.orders_list_items"
+            android:label="@string/l_orders_list_items">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.orders_list_users_per_items"
+            android:label="@string/l_orders_list_users_per_items">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.backup_db"
+            android:label="@string/l_backup">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.warehous"
+            android:label="@string/l_warehous">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.warehous_manager"
+            android:label="@string/l_warehous_manager">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.users_manager"
+            android:label="@string/l_users_manager">
+        </activity>
+        <activity
+            android:name="com.dimoshka.ua.list_orders.managment_select"
+            android:label="@string/l_managment_select">
+        </activity>
+    </application>
+</manifest>

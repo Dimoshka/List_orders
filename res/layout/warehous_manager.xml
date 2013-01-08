@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/t_item_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="@string/t_item_type"
+        android:textSize="@dimen/text_small" />
+
+    <Spinner
+        android:id="@+id/s_items_type"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp" />
+
+    <TextView
+        android:id="@+id/t_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="@string/t_item"
+        android:textSize="@dimen/text_small" />
+
+    <Spinner
+        android:id="@+id/s_items"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp" />
+
+    <TextView
+        android:id="@+id/t_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:text="@string/t_number"
+        android:textSize="@dimen/text_small" />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:inputType="number" >
+    </EditText>
+
+    <Button
+        android:id="@+id/b_add"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:onClick="b_add"
+        android:text="@string/b_add" />
+
+</LinearLayout>

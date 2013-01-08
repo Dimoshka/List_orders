@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="db_name">list_orders.sqlite</string>
+    <string name="db_version">1</string>
+    <string name="app_name">list_orders</string>
+
+    <string-array name="font_size_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+    <string name="all_categoryes">Все категории</string>
+    <string name="m_exit">Выход</string>
+    <string name="m_preference">Настройки</string>
+    <string name="m_add">Добавить</string>
+    <string name="m_refresh">Обновить</string>
+    <string name="m_filtr">Фильтр</string>
+    <string name="m_restory">Резервные копии</string>
+    <string name="m_orders_list">Список заказов</string>
+    <string name="m_export">Экспорт в CSV</string>
+    <string name="m_users_group">Группы пользователей</string>
+    <string name="m_items_type">Типы предметов</string>
+    <string name="m_orders_status">Статусы заказов</string>
+    <string name="m_send_sms">Отправить СМС</string>
+    <string name="t_user">Пользователь</string>
+    <string name="t_contact">Контакт</string>
+    <string name="t_item">Предмет</string>
+    <string name="t_item_type">Тип</string>
+    <string name="t_number">Количество</string>
+    <string name="t_category">Категория</string>
+    <string name="t_status">Статус</string>
+    <string name="t_code">Код</string>
+    <string name="t_users_group">Группа пользователей</string>
+    <string name="t_users_contact">Контакт пользователя</string>
+    <string name="l_main">Список заказов</string>
+    <string name="l_orders_manager">Управление заказами</string>
+    <string name="l_orders">Все заказы</string>
+    <string name="l_backup">Востановление</string>
+    <string name="l_orders_list_items">Список заказов по категории</string>
+    <string name="l_orders_list_users_per_items">Список заказов по предмету</string>
+    <string name="l_order_details">Заказы пользователя</string>
+    <string name="l_users">Пользователи</string>
+    <string name="l_preferences">Настройки</string>
+    <string name="l_items">Предметы</string>
+    <string name="l_set_status">Установка статуса</string>
+    <string name="l_items_manager">Управление предметами</string>
+    <string name="l_users_manager">Управление пользователями</string>
+    <string name="l_filtr">Фильтр</string>
+    <string name="l_warehous">Склад</string>
+    <string name="l_warehous_manager">Управление складом</string>
+    <string name="l_interface_font_size">Размер шрифта</string>
+    <string name="l_interface_font_size_summary">Выберите размер отображаемых текстов</string>
+    <string name="l_managment_select">Группы, типы, статусы</string>
+    <string name="l_users_group">Группы пользователей</string>
+    <string name="l_items_type">Типы предметов</string>
+    <string name="l_orders_status">Статусы заказов</string>
+    <string name="b_orders">Заказы</string>
+    <string name="b_warehouse">Склад</string>
+    <string name="b_items">Предметы</string>
+    <string name="b_users">Пользователи</string>
+    <string name="b_add">Добавить</string>
+    <string name="b_save">Сохранить</string>
+    <string name="b_edit">Редактировать</string>
+    <string name="b_pref">Настройки</string>
+    <string name="b_delete">Удалить</string>
+    <string name="b_status">Присвоить статус</string>
+    <string name="b_create_revert">Создать копию</string>
+    <string name="b_filtr_it_t">Фильтр предметов</string>
+    <string name="b_filtr_it_t_summary">Фильтр отображения категорий предметов</string>
+    <string name="b_filtr_st">Фильтр статусов</string>
+    <string name="b_filtr_st_summary">Фильтр отображения статусов</string>
+    <string name="b_mn_users_group">Группы пользователей</string>
+    <string name="b_mn_users_group_summary">Управление группами пользователей</string>
+    <string name="b_mn_items_type">Типы предметов</string>
+    <string name="b_mn_items_type_summary">Управление типами предметов</string>
+    <string name="b_mn_orders_status">Статусы заказов</string>
+    <string name="b_mn_orders_status_summary">Управление статусами заказов</string>
+    <string name="b_scan_barcode">Отсканировать штрихкод</string>
+     <string name="b_revert">Востановить</string>
+    <string name="cb_users_contact_using">Использовать контакт</string>
+    <string name="d_exit_title">Выйти из приложения?</string>
+    <string name="d_exit_text">Вы действительно хотите выйти?</string>
+    <string name="d_delete_title">Удалить?</string>
+    <string name="d_delete_text">Вы действительно хотите удалить?</string>
+    <string name="b_users_contact">Прикрепить контакт</string>
+    <string name="d_edit_items_title">Редактирование предмета</string>
+    <string name="d_edit_items_text">Введите название:</string>
+    <string name="d_add_items_title">Добавление предмета</string>
+    <string name="d_add_items_text">Введите название:</string>
+    <string name="d_edit_users_title">Редактирование пользователя</string>
+    <string name="d_edit_users_text">Введите фамилию и имя:</string>
+    <string name="d_add_users_title">Добавление пользователя</string>
+    <string name="d_add_users_text">Введите фамилию и имя:</string>
+    <string name="d_add_title">Добавление</string>
+    <string name="d_add_text">Введите название:</string>
+    <string name="d_edit_title">Редактирование</string>
+    <string name="d_edit_text">Введите название:</string>
+    <string name="d_wait_title">Ожидайте</string>
+    <string name="d_wait_mess">Данные обрабатываются</string>
+    <string name="d_barcode_title">Установить Barcode Scanner?</string>
+    <string name="d_barcode_text">Для этой функции необходимо приложение Barcode Scanner. Хотите установить сейчас?</string>
+    <string name="c_db_backup">Резервная копия</string>
+    <string name="c_db_backup_summary">Делать резервную копию базы данных (на карту памяти) при каждом выходе из программы.</string>
+    <string name="c_mn_analytics">Отправка отчетов</string>
+    <string name="c_mn_analytics_summary">Разрешать автоматически отправлять отчеты о работе приложения?</string>
+    <string name="c_db_backups_all">Только последние пять</string>
+    <string name="c_db_backups_all_summary">Оставлять только последние пять резервных копи. Остальные автоматически удалять.</string>
+    <string name="b_db_backups">Резервные копии</string>
+    <string name="b_db_backups_summary">Управление резервными копиями.</string>
+    <string name="pref_cat_db">База данных</string>
+    <string name="pref_cat_intetface">Интерфейс</string>
+    <string name="pref_cat_filtr">Фильтры</string>
+    <string name="pref_cat_management">Управление</string>
+    <string name="menu_management">Управление</string>
+    <string name="toast_db_save">Запись сохранена</string>
+    <string name="toast_db_backup">Резервная копия базы сохранена</string>
+    <string name="toast_db_restory">Резервная копия базы востановлена</string>
+    <string name="toast_all_done">Все выполненно!</string>
+
+    <string-array name="font_size">
+        <item>Очень маленький</item>
+        <item>Мелкий</item>
+        <item>Нормальный</item>
+        <item>Большой</item>
+    </string-array>
+  
+
+</resources>
