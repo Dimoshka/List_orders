@@ -313,7 +313,7 @@ public class orders_manager extends class_activity_extends {
 			database.insert("orders", null, initialValues);
 
 		// pdialog.dismiss();
-		Toast.makeText(getApplicationContext(), R.string.toast_db_save,
+		Toast.makeText(getApplicationContext(), R.string.saved,
 				Toast.LENGTH_SHORT).show();
 
 	}

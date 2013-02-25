@@ -73,7 +73,7 @@ public class users_manager extends class_activity_extends {
 	private void edit() {
 		if (id_u > 0) {
 			Button b = (Button) findViewById(R.id.b_add);
-			b.setText(R.string.b_save);
+			b.setText(R.string.save);
 			et_name.setText(name_u);
 
 			if (id_u_c != 0) {

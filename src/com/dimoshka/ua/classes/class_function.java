@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,17 +24,22 @@ import com.dimoshka.ua.list_orders.R;
 
 public class class_function extends Activity {
 
-	boolean ExternalStorageState() {
-		String state = Environment.getExternalStorageState();
-		if (Environment.MEDIA_MOUNTED.equals(state)) {
-			return true;
-		} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-			return false;
-		} else {
+	public boolean ExternalStorageState() {
+		try {
+			String state = Environment.getExternalStorageState();
+			if (Environment.MEDIA_MOUNTED.equals(state)) {
+				return true;
+			} else if (Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+				return false;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
 			return false;
 		}
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	public void file_backup(Context context, String file_name) {
 		try {
 			if (ExternalStorageState()) {
@@ -71,7 +77,7 @@ public class class_function extends Activity {
 					if (in != null) {
 						in.close();
 					}
-					Toast.makeText(context, R.string.toast_db_backup,
+					Toast.makeText(context, R.string.backup,
 							Toast.LENGTH_SHORT).show();
 				}
 
@@ -90,8 +96,8 @@ public class class_function extends Activity {
 					null, null);
 		} else
 			smsManager.sendTextMessage(phoneNumber, null, message, null, null);
-		Toast.makeText(this, R.string.toast_all_done, Toast.LENGTH_SHORT)
-		.show();
+		Toast.makeText(this, R.string.all_done, Toast.LENGTH_SHORT)
+				.show();
 	}
 
 	public void file_restory(Context context, String file, String db_name) {
@@ -116,7 +122,7 @@ public class class_function extends Activity {
 					if (in != null) {
 						in.close();
 					}
-					Toast.makeText(context, R.string.toast_db_restory,
+					Toast.makeText(context, R.string.restoryed,
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -135,7 +141,7 @@ public class class_function extends Activity {
 				} catch (Exception e) {
 					Log.w("Dimoshka delete backup", e.toString());
 				} finally {
-					Toast.makeText(context, R.string.toast_all_done,
+					Toast.makeText(context, R.string.all_done,
 							Toast.LENGTH_SHORT).show();
 				}
 			}
@@ -186,7 +192,7 @@ public class class_function extends Activity {
 
 		pd = new ProgressDialog(this);
 		pd.setTitle("Title");
-		pd.setMessage(getText(R.string.toast_all_done));
+		pd.setMessage(getText(R.string.all_done));
 		pd.show();
 
 	}

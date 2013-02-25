@@ -68,7 +68,7 @@ public class items_manager extends class_activity_extends {
 	private void edit() {
 		if (id_it > 0) {
 			Button b = (Button) findViewById(R.id.b_add);
-			b.setText(R.string.b_save);
+			b.setText(R.string.save);
 			et_name.setText(name_it);
 			et_code.setText(code_it);
 			for (int u = 0; u < s_items_type.getCount(); u++) {

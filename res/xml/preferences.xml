@@ -1,61 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="@string/pref_cat_db" >
+    <PreferenceCategory android:title="@string/db" >
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="c_db_backup"
-            android:summary="@string/c_db_backup_summary"
-            android:title="@string/c_db_backup" />
+            android:summary="@string/db_backup_summary"
+            android:title="@string/backup" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:key="c_db_backups_all"
-            android:summary="@string/c_db_backups_all_summary"
-            android:title="@string/c_db_backups_all" />
-         <Preference
+            android:summary="@string/db_backups_all_summary"
+            android:title="@string/db_backups_all" />
+
+        <Preference
             android:key="b_db_backups"
-            android:summary="@string/b_db_backups_summary"
-            android:title="@string/b_db_backups" />
+            android:summary="@string/db_backups_summary"
+            android:title="@string/backups" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_cat_intetface" >
+    <PreferenceCategory android:title="@string/intetface" >
         <ListPreference
             android:defaultValue="2"
             android:entries="@array/font_size"
             android:entryValues="@array/font_size_values"
             android:key="font_size"
-            android:summary="@string/l_interface_font_size_summary"
-            android:title="@string/l_interface_font_size" >
+            android:summary="@string/font_size_summary"
+            android:title="@string/font_size" >
         </ListPreference>
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_cat_filtr" >
+    <PreferenceCategory android:title="@string/filtr" >
         <Preference
             android:key="filtr_it_t"
-            android:summary="@string/b_filtr_it_t_summary"
-            android:title="@string/b_filtr_it_t" />
+            android:summary="@string/filtr_it_t_summary"
+            android:title="@string/filtr_it_t" />
         <Preference
             android:key="filtr_st"
-            android:summary="@string/b_filtr_st_summary"
-            android:title="@string/b_filtr_st" />
+            android:summary="@string/filtr_st_summary"
+            android:title="@string/filtr_st" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_cat_management" >
+    <PreferenceCategory android:title="@string/management" >
         <CheckBoxPreference
             android:defaultValue="true"
             android:key="c_mn_analytics"
-            android:summary="@string/c_mn_analytics_summary"
-            android:title="@string/c_mn_analytics" />
+            android:summary="@string/analytics_summary"
+            android:title="@string/analytics" />
 
         <Preference
             android:key="users_group"
-            android:summary="@string/b_mn_users_group_summary"
-            android:title="@string/b_mn_users_group" />
+            android:summary="@string/users_group_summary"
+            android:title="@string/users_group" />
         <Preference
             android:key="items_type"
-            android:summary="@string/b_mn_items_type_summary"
-            android:title="@string/b_mn_items_type" />
+            android:summary="@string/items_type_summary"
+            android:title="@string/items_type" />
         <Preference
             android:key="orders_status"
-            android:summary="@string/b_mn_orders_status_summary"
-            android:title="@string/b_mn_orders_status" />
+            android:summary="@string/orders_status_summary"
+            android:title="@string/orders_status" />
     </PreferenceCategory>
 
 </PreferenceScreen>

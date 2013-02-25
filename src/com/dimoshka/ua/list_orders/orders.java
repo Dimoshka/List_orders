@@ -70,15 +70,15 @@ public class orders extends class_activity_extends {
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, 0, Menu.NONE, R.string.m_add).setIcon(
+		menu.add(Menu.NONE, 0, Menu.NONE, R.string.add).setIcon(
 				android.R.drawable.ic_menu_add);
-		menu.add(Menu.NONE, 3, Menu.NONE, R.string.m_orders_list).setIcon(
+		menu.add(Menu.NONE, 3, Menu.NONE, R.string.orders_list).setIcon(
 				android.R.drawable.ic_menu_more);
-		menu.add(Menu.NONE, 2, Menu.NONE, R.string.m_filtr).setIcon(
+		menu.add(Menu.NONE, 2, Menu.NONE, R.string.filtr).setIcon(
 				android.R.drawable.ic_menu_crop);
-		menu.add(Menu.NONE, 6, Menu.NONE, R.string.m_orders_status).setIcon(
+		menu.add(Menu.NONE, 6, Menu.NONE, R.string.orders_status).setIcon(
 				android.R.drawable.ic_menu_directions);
-		menu.add(Menu.NONE, 1, Menu.NONE, R.string.m_refresh).setIcon(
+		menu.add(Menu.NONE, 1, Menu.NONE, R.string.refresh).setIcon(
 				android.R.drawable.ic_menu_revert);
 		return true;
 	}

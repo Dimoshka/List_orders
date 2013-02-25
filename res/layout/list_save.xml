@@ -17,6 +17,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:onClick="b_add"
-        android:text="@string/b_save" />
+        android:text="@string/save" />
 
 </LinearLayout>

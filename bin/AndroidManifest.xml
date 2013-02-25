@@ -3,87 +3,101 @@
     package="com.dimoshka.ua.list_orders"
     android:versionCode="59"
     android:versionName="1.2.1" >
+
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="15" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:allowClearUserData="true"
+        android:debuggable="true"
         android:enabled="true"
+        android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/l_main"
-        android:theme="@style/Theme.Sherlock.Light" android:vmSafeMode="true" android:restoreAnyVersion="true" android:logo="@drawable/ic_launcher" android:killAfterRestore="true" android:restoreNeedsApplication="true" android:largeHeap="false" android:uiOptions="none|splitActionBarWhenNarrow" android:hardwareAccelerated="true" android:debuggable="true">
+        android:killAfterRestore="true"
+        android:label="@string/main"
+        android:largeHeap="false"
+        android:logo="@drawable/ic_launcher"
+        android:restoreAnyVersion="true"
+        android:restoreNeedsApplication="true"
+        android:theme="@style/Theme.Sherlock.Light"
+        android:uiOptions="none|splitActionBarWhenNarrow"
+        android:vmSafeMode="true" >
         <activity
             android:name="com.dimoshka.ua.list_orders.main"
-            android:label="@string/l_main">
+            android:label="@string/main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.orders_manager"
-            android:label="@string/l_orders_manager">
+            android:label="@string/orders_manager" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.orders"
-            android:label="@string/l_orders">
+            android:label="@string/orders" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.users"
-            android:label="@string/l_users">
+            android:label="@string/users" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.items"
-            android:label="@string/l_items">
+            android:label="@string/items" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.preferences"
-            android:label="@string/l_preferences">
+            android:label="@string/preference" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.orders_details"
-            android:label="@string/l_order_details">
+            android:label="@string/order_details" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.items_manager"
-            android:label="@string/l_items_manager">
+            android:label="@string/items_manager" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.filtr"
-            android:label="@string/l_filtr">
+            android:label="@string/filtr" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.orders_list_items"
-            android:label="@string/l_orders_list_items">
+            android:label="@string/orders_list_items" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.orders_list_users_per_items"
-            android:label="@string/l_orders_list_users_per_items">
+            android:label="@string/orders_list_users_per_items" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.backup_db"
-            android:label="@string/l_backup">
+            android:label="@string/backup" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.warehous"
-            android:label="@string/l_warehous">
+            android:label="@string/warehous" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.warehous_manager"
-            android:label="@string/l_warehous_manager">
+            android:label="@string/warehous_manager" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.users_manager"
-            android:label="@string/l_users_manager">
+            android:label="@string/users_manager" >
         </activity>
         <activity
             android:name="com.dimoshka.ua.list_orders.managment_select"
-            android:label="@string/l_managment_select">
+            android:label="@string/managment_select" >
         </activity>
     </application>
+
 </manifest>

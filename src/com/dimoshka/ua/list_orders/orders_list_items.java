@@ -84,7 +84,7 @@ public class orders_list_items extends class_activity_extends {
 		listView.setAdapter(scAdapter);
 
 		t1.setText(name);
-		t2.setText(R.string.m_orders_list);
+		t2.setText(R.string.orders_list);
 	}
 
 	private void get_cursor_all_orders() {
@@ -99,9 +99,9 @@ public class orders_list_items extends class_activity_extends {
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, 0, Menu.NONE, R.string.m_refresh).setIcon(
+		menu.add(Menu.NONE, 0, Menu.NONE, R.string.refresh).setIcon(
 				android.R.drawable.ic_menu_revert);
-		menu.add(Menu.NONE, 5, Menu.NONE, R.string.m_export).setIcon(
+		menu.add(Menu.NONE, 5, Menu.NONE, R.string.export).setIcon(
 				android.R.drawable.ic_menu_save);
 		return true;
 	}
@@ -119,7 +119,7 @@ public class orders_list_items extends class_activity_extends {
 		case 5:
 			try {
 				if (new class_export_to_csv().execute(cursor).get()) {
-					Toast.makeText(this, getString(R.string.toast_all_done),
+					Toast.makeText(this, getString(R.string.all_done),
 							Toast.LENGTH_SHORT).show();
 				}
 			} catch (InterruptedException e) {
@@ -140,7 +140,7 @@ public class orders_list_items extends class_activity_extends {
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.list) {
-			menu.setHeaderTitle(R.string.menu_management);
+			menu.setHeaderTitle(R.string.management);
 			MenuInflater inflater = getMenuInflater();
 			inflater.inflate(R.menu.menu_item_status, menu);
 		}
@@ -169,8 +169,8 @@ public class orders_list_items extends class_activity_extends {
 			Adapt_status
 					.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			AlertDialog.Builder alert = new AlertDialog.Builder(this);
-			alert.setTitle(R.string.menu_management);
-			alert.setMessage(R.string.t_status);
+			alert.setTitle(R.string.management);
+			alert.setMessage(R.string.status);
 			final Spinner input = new Spinner(this);
 			input.setAdapter(Adapt_status);
 			alert.setView(input);
@@ -209,7 +209,7 @@ public class orders_list_items extends class_activity_extends {
 								Log.w("Dimoshka", e.toString());
 							} finally {
 								Toast.makeText(getBaseContext(),
-										R.string.toast_all_done,
+										R.string.all_done,
 										Toast.LENGTH_SHORT).show();
 								reload();
 							}

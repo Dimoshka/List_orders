@@ -122,13 +122,13 @@ public class managment_select extends class_activity_extends {
 	}
 
 	public void b_add(View v) {
-		alert_input_dialog(R.string.d_add_title, R.string.d_add_text, "");
+		alert_input_dialog(R.string.add_title, R.string.add_text, "");
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, 0, Menu.NONE, R.string.m_add).setIcon(
+		menu.add(Menu.NONE, 0, Menu.NONE, R.string.add).setIcon(
 				android.R.drawable.ic_menu_add);
-		menu.add(Menu.NONE, 1, Menu.NONE, R.string.m_refresh).setIcon(
+		menu.add(Menu.NONE, 1, Menu.NONE, R.string.refresh).setIcon(
 				android.R.drawable.ic_menu_revert);
 		return true;
 	}
@@ -215,7 +215,7 @@ public class managment_select extends class_activity_extends {
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.list) {
-			menu.setHeaderTitle(R.string.menu_management);
+			menu.setHeaderTitle(R.string.management);
 			android.view.MenuInflater inflater = getMenuInflater();
 			inflater.inflate(R.menu.menu_edit_delete, menu);
 		}
@@ -223,8 +223,8 @@ public class managment_select extends class_activity_extends {
 
 	private void delete(final long id) {
 		new AlertDialog.Builder(this)
-				.setTitle(getString(R.string.d_delete_title))
-				.setMessage(getString(R.string.d_delete_text))
+				.setTitle(getString(R.string.delete_title))
+				.setMessage(getString(R.string.delete_text))
 				.setNegativeButton(android.R.string.no, null)
 				.setPositiveButton(android.R.string.yes, new OnClickListener() {
 					public void onClick(DialogInterface arg0, int arg1) {
@@ -256,7 +256,7 @@ public class managment_select extends class_activity_extends {
 		int itemId = item.getItemId();
 		if (itemId == R.id.b_edit) {
 			id_edit = info.id;
-			alert_input_dialog(R.string.d_edit_title, R.string.d_edit_text,
+			alert_input_dialog(R.string.edit_title, R.string.edit_text,
 					cursor.getString(cursor.getColumnIndex("name")));
 			reload();
 		} else if (itemId == R.id.b_delete) {

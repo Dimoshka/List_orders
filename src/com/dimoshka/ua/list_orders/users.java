@@ -130,11 +130,11 @@ public class users extends class_activity_extends {
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add(Menu.NONE, 0, Menu.NONE, R.string.m_add).setIcon(
+		menu.add(Menu.NONE, 0, Menu.NONE, R.string.add).setIcon(
 				android.R.drawable.ic_menu_add);
-		menu.add(Menu.NONE, 1, Menu.NONE, R.string.m_refresh).setIcon(
+		menu.add(Menu.NONE, 1, Menu.NONE, R.string.refresh).setIcon(
 				android.R.drawable.ic_menu_revert);
-		menu.add(Menu.NONE, 6, Menu.NONE, R.string.m_users_group).setIcon(
+		menu.add(Menu.NONE, 6, Menu.NONE, R.string.users_group).setIcon(
 				android.R.drawable.ic_menu_directions);
 		return true;
 	}
@@ -163,7 +163,7 @@ public class users extends class_activity_extends {
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.list) {
-			menu.setHeaderTitle(R.string.menu_management);
+			menu.setHeaderTitle(R.string.management);
 			android.view.MenuInflater inflater = getMenuInflater();
 			inflater.inflate(R.menu.menu_edit_delete, menu);
 		}
@@ -176,8 +176,8 @@ public class users extends class_activity_extends {
 
 	private void delete(final long id) {
 		new AlertDialog.Builder(this)
-				.setTitle(getString(R.string.d_delete_title))
-				.setMessage(getString(R.string.d_delete_text))
+				.setTitle(getString(R.string.delete_title))
+				.setMessage(getString(R.string.delete_text))
 				.setNegativeButton(android.R.string.no, null)
 				.setPositiveButton(android.R.string.yes, new OnClickListener() {
 					public void onClick(DialogInterface arg0, int arg1) {

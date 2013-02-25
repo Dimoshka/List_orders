@@ -115,11 +115,11 @@ public class main extends class_activity_extends {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-				menu.add(Menu.NONE, 2, Menu.NONE, R.string.m_restory).setIcon(
+				menu.add(Menu.NONE, 2, Menu.NONE, R.string.restory).setIcon(
 				android.R.drawable.ic_menu_recent_history);
-		menu.add(Menu.NONE, 4, Menu.NONE, R.string.m_preference).setIcon(
+		menu.add(Menu.NONE, 4, Menu.NONE, R.string.preference).setIcon(
 				android.R.drawable.ic_menu_preferences);
-		menu.add(Menu.NONE, 0, Menu.NONE, R.string.m_exit).setIcon(
+		menu.add(Menu.NONE, 0, Menu.NONE, R.string.exit).setIcon(
 				android.R.drawable.ic_lock_power_off);
 
 		return true;

@@ -8,11 +8,13 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
+
         <TableRow
             android:id="@+id/tableRow1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center" >
+
             <LinearLayout
                 android:id="@+id/linearLayout3"
                 android:layout_width="160dp"
@@ -20,20 +22,23 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="10dp" >
+
                 <ImageView
                     android:id="@+id/b_orders"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:contentDescription="@string/b_orders"
+                    android:contentDescription="@string/orders"
                     android:onClick="show_orders"
                     android:src="@drawable/orders" />
+
                 <TextView
                     android:id="@+id/textView1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/b_orders"
+                    android:text="@string/orders"
                     android:textColor="@color/text_blue" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/linearLayout4"
                 android:layout_width="160dp"
@@ -41,26 +46,30 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="10dp" >
+
                 <ImageView
                     android:id="@+id/b_items"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:contentDescription="@string/b_items"
+                    android:contentDescription="@string/items"
                     android:onClick="show_items"
                     android:src="@drawable/items" />
+
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/b_items"
+                    android:text="@string/items"
                     android:textColor="@color/text_blue" />
             </LinearLayout>
         </TableRow>
+
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center" >
+
             <LinearLayout
                 android:id="@+id/linearLayout6"
                 android:layout_width="160dp"
@@ -68,20 +77,23 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="10dp" >
+
                 <ImageView
                     android:id="@+id/b_users"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:contentDescription="@string/b_users"
+                    android:contentDescription="@string/users"
                     android:onClick="show_users"
                     android:src="@drawable/users" />
+
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/b_users"
+                    android:text="@string/users"
                     android:textColor="@color/text_blue" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/linearLayout7"
                 android:layout_width="160dp"
@@ -89,20 +101,23 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="10dp" >
+
                 <ImageView
                     android:id="@+id/b_warehouse"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:contentDescription="@string/b_warehouse"
+                    android:contentDescription="@string/warehous"
                     android:onClick="show_warehouse"
                     android:src="@drawable/warehouse" />
+
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/b_warehouse"
+                    android:text="@string/warehous"
                     android:textColor="@color/text_blue" />
             </LinearLayout>
         </TableRow>
     </TableLayout>
+
 </LinearLayout>

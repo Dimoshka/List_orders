@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:text="@string/t_item_type"
+        android:text="@string/item_type"
         android:textSize="@dimen/text_small" />
 
     <Spinner
@@ -24,7 +24,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:text="@string/t_item"
+        android:text="@string/item"
         android:textSize="@dimen/text_small" />
 
     <Spinner
@@ -38,7 +38,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="3dp"
-        android:text="@string/t_number"
+        android:text="@string/number"
         android:textSize="@dimen/text_small" />
 
     <EditText
@@ -55,6 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="3dp"
         android:onClick="b_add"
-        android:text="@string/b_add" />
+        android:text="@string/add" />
 
 </LinearLayout>

@@ -5,14 +5,14 @@
         android:id="@+id/b_revert"
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_myplaces"
-        android:title="@string/b_revert"
+        android:title="@string/revert"
         android:visible="true">
     </item>
     <item
         android:id="@+id/b_delete"
         android:enabled="true"
         android:icon="@android:drawable/ic_menu_delete"
-        android:title="@string/b_delete"
+        android:title="@string/delete"
         android:visible="true">
     </item>
 

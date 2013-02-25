@@ -38,7 +38,7 @@ public class backup_db extends class_activity_extends {
 		setContentView(R.layout.list_save);
 
 		Button b = (Button) findViewById(R.id.b_add);
-		b.setText(R.string.b_add);
+		b.setText(R.string.add);
 
 		listView = (ListView) findViewById(R.id.list);
 		registerForContextMenu(listView);
@@ -54,7 +54,7 @@ public class backup_db extends class_activity_extends {
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		if (v.getId() == R.id.list) {
-			menu.setHeaderTitle(R.string.menu_management);
+			menu.setHeaderTitle(R.string.management);
 			MenuInflater inflater = getMenuInflater();
 			inflater.inflate(R.menu.menu_revert_delete, menu);
 		}
@@ -75,8 +75,8 @@ public class backup_db extends class_activity_extends {
 
 	private void delete(final long id) {
 		new AlertDialog.Builder(this)
-				.setTitle(getString(R.string.d_delete_title))
-				.setMessage(getString(R.string.d_delete_text))
+				.setTitle(getString(R.string.delete_title))
+				.setMessage(getString(R.string.delete_text))
 				.setNegativeButton(android.R.string.no, null)
 				.setPositiveButton(android.R.string.yes, new OnClickListener() {
 					public void onClick(DialogInterface arg0, int arg1) {
