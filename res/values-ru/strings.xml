@@ -4,11 +4,6 @@
     <string name="db_name">list_orders.sqlite</string>
     <string name="db_version">1</string>
     <string name="app_name">list_orders</string>
-    <string name="db">База данных</string>
-    <string name="db_backup_summary">Делать резервную копию базы данных (на карту памяти) при каждом выходе из программы.</string>
-    <string name="db_backups_all">Только последние пять</string>
-    <string name="db_backups_all_summary">Оставлять только последние пять резервных копи. Остальные автоматически удалять.</string>
-    <string name="db_backups_summary">Управление резервными копиями.</string>
 
     <string-array name="font_size_values">
         <item>1</item>
@@ -16,8 +11,13 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-
-    <string name="all_categoryes">Все категории</string>
+    <string name="db">База данных</string>
+    <string name="db_backup_summary">Делать резервную копию базы данных (на карту памяти) при каждом выходе из программы.</string>
+    <string name="db_backups_all">Только последние пять</string>
+    <string name="db_backups_all_summary">Оставлять только последние пять резервных копи. Остальные автоматически удалять.</string>
+    <string name="db_backups_summary">Управление резервными копиями.</string>
+    <string name="category_all">Все категории</string>
+    <string name="category">Категория</string>
     <string name="management">Управление</string>
     <string name="managment_select">Группы, типы, статусы</string>
     <string name="exit">Выход</string>
@@ -50,7 +50,6 @@
     <string name="backuped">Резервная копия базы сохранена</string>
     <string name="export">Экспорт в CSV</string>
     <string name="send_sms">Отправить СМС</string>
-    <string name="category">Категория</string>
     <string name="intetface">Интерфейс</string>
     <string name="all_done">Все выполненно!</string>
     <string name="user">Пользователь</string>
@@ -86,7 +85,6 @@
     <string name="order_details">Заказы пользователя</string>
     <string name="orders_status">Статусы заказов</string>
     <string name="orders_status_summary">Управление статусами заказов</string>
-    <string name="set_status">Установка статуса</string>
     <string name="warehous">Склад</string>
     <string name="warehous_manager">Управление складом</string>
     <string name="font_size">Размер шрифта</string>

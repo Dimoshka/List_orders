@@ -105,7 +105,7 @@ public class orders_details extends class_activity_extends {
 				category.setText(cursor_name.getString(cursor_name
 						.getColumnIndex("name_cat")));
 			else
-				category.setText(R.string.all_categoryes);
+				category.setText(R.string.category_all);
 		} catch (Exception e) {
 			Log.w("Dimoshka", e.toString());
 		}
