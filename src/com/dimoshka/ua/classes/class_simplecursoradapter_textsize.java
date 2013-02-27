@@ -1,5 +1,7 @@
 package com.dimoshka.ua.classes;
 
+import com.dimoshka.ua.list_orders.R;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.view.LayoutInflater;
@@ -7,8 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-
-import com.dimoshka.ua.list_orders.R;
 
 public class class_simplecursoradapter_textsize extends SimpleCursorAdapter {
 	private int layout;

@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -15,8 +17,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -130,8 +130,10 @@ public class orders_manager extends class_activity_extends {
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu) {
-		menu.add("b_add").setIcon(android.R.drawable.ic_menu_save)
-				.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+		/*
+		 * menu.add("b_add").setIcon(android.R.drawable.ic_menu_save)
+		 * .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+		 */
 		return true;
 	}
 

@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.dimoshka.ua.list_orders"
     android:versionCode="59"
-    android:versionName="1.2.1" >
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="7"
@@ -16,7 +16,7 @@
     <application
         android:allowBackup="true"
         android:allowClearUserData="true"
-        android:debuggable="true"
+        android:debuggable="false"
         android:enabled="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -26,7 +26,7 @@
         android:logo="@drawable/ic_launcher"
         android:restoreAnyVersion="true"
         android:restoreNeedsApplication="true"
-        android:theme="@style/Theme.Sherlock.Light"
+        android:theme="@android:style/Theme.Light"
         android:uiOptions="none|splitActionBarWhenNarrow"
         android:vmSafeMode="true" >
         <activity

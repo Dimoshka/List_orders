@@ -69,7 +69,6 @@
     <string name="item">Item</string>
     <string name="items">"Items"</string>
     <string name="item_type">Type</string>
-    <string name="items_type">Types of items</string>
     <string name="items_manager">Items Management</string>
     <string name="items_edit_title">Edit Item</string>
     <string name="items_edit_text">Enter the name of:</string>
@@ -84,7 +83,6 @@
     <string name="orders_list_items">The order list by category</string>
     <string name="orders_list_users_per_items">List of orders on the item</string>
     <string name="order_details">Customized</string>
-    <string name="orders_status">Order status</string>
     <string name="orders_status_summary">Status Management Orders</string>
     <string name="warehous">Warehouse</string>
     <string name="warehous_manager">Warehouse Management</string>

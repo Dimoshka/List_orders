@@ -3,11 +3,10 @@ package com.dimoshka.ua.list_orders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
-
-public class preferences extends SherlockPreferenceActivity {
+public class preferences extends PreferenceActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

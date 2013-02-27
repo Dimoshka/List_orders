@@ -11,6 +11,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 
+import com.dimoshka.ua.list_orders.R;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -19,8 +21,6 @@ import android.os.Environment;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.widget.Toast;
-
-import com.dimoshka.ua.list_orders.R;
 
 public class class_function extends Activity {
 

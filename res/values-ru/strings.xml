@@ -11,7 +11,8 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <string name="db">База данных</string>
+
+    <string name="db">База данных</string>
     <string name="db_backup_summary">Делать резервную копию базы данных (на карту памяти) при каждом выходе из программы.</string>
     <string name="db_backups_all">Только последние пять</string>
     <string name="db_backups_all_summary">Оставлять только последние пять резервных копи. Остальные автоматически удалять.</string>
@@ -74,7 +75,6 @@
     <string name="items_edit_text">Введите название:</string>
     <string name="items_add_title">Добавление предмета</string>
     <string name="items_add_text">Введите название:</string>
-    <string name="items_type">Типы предметов</string>
     <string name="items_type_summary">Управление типами предметов</string>
     <string name="orders">Заказы</string>
     <string name="orders_list">Заказы - списком</string>
@@ -83,7 +83,6 @@
     <string name="orders_list_items">Список заказов по категории</string>
     <string name="orders_list_users_per_items">Список заказов по предмету</string>
     <string name="order_details">Заказы пользователя</string>
-    <string name="orders_status">Статусы заказов</string>
     <string name="orders_status_summary">Управление статусами заказов</string>
     <string name="warehous">Склад</string>
     <string name="warehous_manager">Управление складом</string>
