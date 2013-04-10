@@ -95,6 +95,7 @@ public class warehous extends class_activity_extends {
 				}).create().show();
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_items() {
 		stopManagingCursor(cursor);
 		cursor = database

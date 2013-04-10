@@ -16,6 +16,7 @@ public class class_simplecursoradapter_textsize extends SimpleCursorAdapter {
 	private int[] to;
 	private String size_text;
 
+	@SuppressWarnings("deprecation")
 	public class_simplecursoradapter_textsize(Context context, int layout,
 			Cursor c, String[] from, int[] to, String size_text) {
 		super(context, layout, c, from, to);

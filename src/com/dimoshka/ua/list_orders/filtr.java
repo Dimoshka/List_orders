@@ -37,6 +37,7 @@ public class filtr extends class_activity_extends {
 		get_cursor_all();
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all() {
 		stopManagingCursor(cursor);
 		cursor = database.query(table, new String[] { "_id", "name", "show" },

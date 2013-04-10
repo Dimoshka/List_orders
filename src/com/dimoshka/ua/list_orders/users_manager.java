@@ -30,6 +30,7 @@ public class users_manager extends class_activity_extends {
 	private String name_u;
 	private int id_u_c;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,10 +52,8 @@ public class users_manager extends class_activity_extends {
 		database = dbOpenHelper.openDataBase();
 
 		stopManagingCursor(cursor_u_g);
-
 		cursor_u_g = database.query("users_group",
 				new String[] { "_id", "name" }, null, null, null, null, "name");
-
 		startManagingCursor(cursor_u_g);
 
 		class_simplecursoradapter_textsize Adapt_users = new class_simplecursoradapter_textsize(
@@ -70,6 +69,7 @@ public class users_manager extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void edit() {
 		if (id_u > 0) {
 			Button b = (Button) findViewById(R.id.b_add);
@@ -104,6 +104,7 @@ public class users_manager extends class_activity_extends {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_contacts() {
 
 		final String[] projection = new String[] {

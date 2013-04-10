@@ -81,6 +81,7 @@ public class items extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_types() {
 		stopManagingCursor(cursor_t);
 		cursor_t = database.query("items_type", new String[] { "_id", "name" },
@@ -94,13 +95,14 @@ public class items extends class_activity_extends {
 		s_type.setAdapter(sc_t);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_items() {
 		stopManagingCursor(cursor);
 		id_it_t = cursor_t.getInt(cursor_t.getColumnIndex("_id"));
 		cursor = database
 				.rawQuery(
 
-						"SELECT items._id, items.name, items.code, ord.number from items left join items_type on items.id_it_t=items_type._id left join (select sum(number) as number, id_it from orders left join status on orders.id_st=status._id where status.show=1 group by orders.id_it) as ord on items._id=ord.id_it where items_type.show=1 and items.id_it_t="
+						"SELECT items._id, items.name, items.code, ord.number, items.show from items left join items_type on items.id_it_t=items_type._id left join (select sum(number) as number, id_it from orders left join status on orders.id_st=status._id where status.show=1 group by orders.id_it) as ord on items._id=ord.id_it where items_type.show=1 and items.id_it_t="
 								+ id_it_t + " order by items.name asc", null);
 
 		startManagingCursor(cursor);
@@ -194,6 +196,8 @@ public class items extends class_activity_extends {
 					cursor.getString(cursor.getColumnIndex("name")));
 			i.putExtra("code_it",
 					cursor.getString(cursor.getColumnIndex("code")));
+			i.putExtra("show", cursor.getInt(cursor.getColumnIndex("show")));
+
 			startActivity(i);
 		} else if (itemId == R.id.b_delete) {
 			delete(info.id);

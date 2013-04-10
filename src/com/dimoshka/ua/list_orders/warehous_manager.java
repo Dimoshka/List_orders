@@ -22,6 +22,7 @@ public class warehous_manager extends class_activity_extends {
 	private Cursor cursor_it_t;
 	private Cursor cursor_it;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -64,6 +65,7 @@ public class warehous_manager extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_items() {
 		try {
 			stopManagingCursor(cursor_it);
@@ -91,10 +93,9 @@ public class warehous_manager extends class_activity_extends {
 		startActivity(i);
 	}
 
+	@SuppressWarnings("deprecation")
 	public void b_add(View v) {
-
 		int id_it = cursor_it.getInt(cursor_it.getColumnIndex("_id"));
-
 		Cursor cur = null;
 		stopManagingCursor(cur);
 		cur = database.rawQuery("SELECT _id from items_warehouse where id_it="

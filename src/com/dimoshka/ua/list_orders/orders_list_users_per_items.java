@@ -86,6 +86,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 		t2.setText(R.string.orders_list);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_orders_of_items() {
 		stopManagingCursor(cursor);
 		cursor = database
@@ -155,6 +156,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 		startActivity(i);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void set_status(final long id_or) {
 		try {
 			final Cursor cursor_st;

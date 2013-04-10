@@ -33,6 +33,7 @@ public class users extends class_activity_extends {
 	private class_simplecursoradapter_textsize sc_u_g;
 	private Spinner s_categoryes;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -95,6 +96,7 @@ public class users extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_groups() {
 		stopManagingCursor(cursor_u_g);
 		cursor_u_g = database.query("users_group",
@@ -108,6 +110,7 @@ public class users extends class_activity_extends {
 		s_categoryes.setAdapter(sc_u_g);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_users() {
 		stopManagingCursor(cursor);
 		id_u_g = cursor_u_g.getInt(cursor_u_g.getColumnIndex("_id"));

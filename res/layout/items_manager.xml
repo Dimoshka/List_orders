@@ -60,6 +60,13 @@
         android:text="@string/barcode_scan" >
     </Button>
 
+    <CheckBox
+        android:id="@+id/check_show"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:text="@string/show" />
+
     <Button
         android:id="@+id/b_add"
         android:layout_width="fill_parent"

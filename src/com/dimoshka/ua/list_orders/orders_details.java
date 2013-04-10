@@ -56,6 +56,7 @@ public class orders_details extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_orders() {
 		try {
 
@@ -200,6 +201,7 @@ public class orders_details extends class_activity_extends {
 				}).create().show();
 	}
 
+	@SuppressWarnings("deprecation")
 	private void set_status(final long id_or) {
 		try {
 			final Cursor cursor_st;

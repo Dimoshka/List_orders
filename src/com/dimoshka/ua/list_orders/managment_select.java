@@ -89,6 +89,7 @@ public class managment_select extends class_activity_extends {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_data() {
 		stopManagingCursor(cursor);
 

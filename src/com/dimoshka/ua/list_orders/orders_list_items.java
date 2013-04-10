@@ -87,6 +87,7 @@ public class orders_list_items extends class_activity_extends {
 		t2.setText(R.string.orders_list);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_orders() {
 		stopManagingCursor(cursor);
 		cursor = database
@@ -156,6 +157,7 @@ public class orders_list_items extends class_activity_extends {
 		return true;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void set_status(final long id_it) {
 		try {
 			final Cursor cursor_st;

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="db_name">list_orders.sqlite</string>
-    <string name="db_version">1</string>
+    <string name="db_version">2</string>
     <string name="app_name">list_orders</string>
 
     <string-array name="font_size_values">
@@ -40,6 +40,7 @@
     <string name="number">Quantity</string>
     <string name="status">Status</string>
     <string name="status_set">Assign status</string>
+    <string name="show">Показывать</string>
     <string name="code">Code</string>
     <string name="main">List of orders</string>
     <string name="restory">Backups</string>

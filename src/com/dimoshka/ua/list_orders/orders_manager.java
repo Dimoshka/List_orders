@@ -3,6 +3,7 @@ package com.dimoshka.ua.list_orders;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -42,6 +43,7 @@ public class orders_manager extends class_activity_extends {
 
 	private int id_it_edit = 0;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -66,13 +68,11 @@ public class orders_manager extends class_activity_extends {
 		database = dbOpenHelper.openDataBase();
 
 		stopManagingCursor(cursor_u);
-
 		stopManagingCursor(cursor_cat);
 		stopManagingCursor(cursor_st);
 
 		cursor_u = database.query("users", new String[] { "_id", "name" },
 				null, null, null, null, "name");
-
 		cursor_cat = database.query("categories",
 				new String[] { "_id", "name" }, null, null, null, null, "name");
 		cursor_st = database.query("status", new String[] { "_id", "name" },
@@ -116,7 +116,7 @@ public class orders_manager extends class_activity_extends {
 
 		stopManagingCursor(cursor_it_t);
 		cursor_it_t = database.query("items_type",
-				new String[] { "_id", "name" }, null, null, null, null, "name");
+				new String[] { "_id", "name" }, null,  null, null, null, "name");
 		startManagingCursor(cursor_it_t);
 		class_simplecursoradapter_textsize Adapt_items_type = new class_simplecursoradapter_textsize(
 				this, R.layout.spinner_layout_item, cursor_it_t,
@@ -150,6 +150,7 @@ public class orders_manager extends class_activity_extends {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_items() {
 		try {
 			stopManagingCursor(cursor_it);
@@ -157,7 +158,7 @@ public class orders_manager extends class_activity_extends {
 					"SELECT _id, name from items where id_it_t='"
 							+ cursor_it_t.getInt(cursor_it_t
 									.getColumnIndex("_id"))
-							+ "' order by name asc", null);
+							+ "' and show='1' order by name asc", null);
 			startManagingCursor(cursor_it);
 
 			class_simplecursoradapter_textsize Adapt_items = new class_simplecursoradapter_textsize(
@@ -183,6 +184,7 @@ public class orders_manager extends class_activity_extends {
 		}
 	}
 
+	@SuppressWarnings("deprecation")
 	private void edit() {
 
 		for (int i = 0; i < s_users.getCount(); i++) {
@@ -281,10 +283,8 @@ public class orders_manager extends class_activity_extends {
 		save();
 	}
 
+	@SuppressLint("SimpleDateFormat")
 	void save() {
-
-		// show_dialog();
-
 		ContentValues initialValues = new ContentValues();
 
 		int id_u = 0;

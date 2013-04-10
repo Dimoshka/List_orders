@@ -117,6 +117,7 @@ public class orders extends class_activity_extends {
 		return false;
 	}
 
+	@SuppressWarnings("deprecation")
 	private void load_categoryes() {
 		stopManagingCursor(cursor_cat);
 		cursor_cat = database.query("categories",
@@ -131,6 +132,7 @@ public class orders extends class_activity_extends {
 		s_categoryes.setAdapter(sc_categoryes);
 	}
 
+	@SuppressWarnings("deprecation")
 	private void get_cursor_all_orders() {
 		stopManagingCursor(cursor);
 		id_cat = cursor_cat.getInt(cursor_cat.getColumnIndex("_id"));
