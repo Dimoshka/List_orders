@@ -1,8 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -21,6 +18,9 @@ import android.widget.Toast;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class orders_manager extends class_activity_extends {
 
@@ -288,12 +288,16 @@ public class orders_manager extends class_activity_extends {
 		ContentValues initialValues = new ContentValues();
 
 		int id_u = 0;
+        cursor_u.moveToPosition(s_users.getSelectedItemPosition());
 		id_u = cursor_u.getInt(cursor_u.getColumnIndex("_id"));
 		int id_cat = 0;
+        cursor_cat.moveToPosition(s_categoryes.getSelectedItemPosition());
 		id_cat = cursor_cat.getInt(cursor_cat.getColumnIndex("_id"));
 		int id_it = 0;
+        cursor_it.moveToPosition(s_items.getSelectedItemPosition());
 		id_it = cursor_it.getInt(cursor_it.getColumnIndex("_id"));
 		int id_st = 0;
+        cursor_st.moveToPosition(s_status.getSelectedItemPosition());
 		id_st = cursor_st.getInt(cursor_st.getColumnIndex("_id"));
 
 		initialValues.put("id_u", id_u);

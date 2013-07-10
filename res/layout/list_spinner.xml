@@ -3,14 +3,18 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+
     <Spinner
         android:id="@+id/s_categoryes"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="1dp" />
+
     <ListView
         android:id="@+id/list"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="fill_parent"
+        android:fastScrollEnabled="true" >
     </ListView>
+
 </LinearLayout>

@@ -120,6 +120,7 @@ public class items_manager extends class_activity_extends {
 	public void b_add(View v) {
 		ContentValues initialValues = new ContentValues();
 
+        cursor_it_t.moveToPosition(s_items_type.getSelectedItemPosition());
 		int id_it_t = cursor_it_t.getInt(cursor_it_t.getColumnIndex("_id"));
 
 		initialValues.put("id_it_t", id_it_t);

@@ -1,9 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
-import com.dimoshka.ua.classes.class_sqlite;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +10,10 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.dimoshka.ua.classes.class_activity_extends;
+import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
+import com.dimoshka.ua.classes.class_sqlite;
 
 public class users_manager extends class_activity_extends {
 
@@ -138,7 +138,10 @@ public class users_manager extends class_activity_extends {
 	public void b_add(View v) {
 		ContentValues initialValues = new ContentValues();
 
+        cursor_u_g.moveToPosition(s_users_group.getSelectedItemPosition());
 		int id_ug = cursor_u_g.getInt(cursor_u_g.getColumnIndex("_id"));
+
+        cursor_u_c.moveToPosition(s_users_contact.getSelectedItemPosition());
 		int id_contact = cursor_u_c.getInt(cursor_u_c
 				.getColumnIndex(ContactsContract.Contacts._ID));
 

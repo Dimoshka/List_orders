@@ -1,17 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="db_name">list_orders.sqlite</string>
-    <string name="db_version">2</string>
-    <string name="app_name">list_orders</string>
-
-    <string-array name="font_size_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
     <string name="db">База данных</string>
     <string name="db_backup_summary">Делать резервную копию базы данных (на карту памяти) при каждом выходе из программы.</string>
     <string name="db_backups_all">Только последние пять</string>

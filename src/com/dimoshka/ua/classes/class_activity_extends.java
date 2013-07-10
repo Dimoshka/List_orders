@@ -1,15 +1,15 @@
 package com.dimoshka.ua.classes;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
+import com.actionbarsherlock.app.SherlockActivity;
 import com.google.analytics.tracking.android.EasyTracker;
 
 
-public class class_activity_extends extends Activity {
+public class class_activity_extends extends SherlockActivity {
 
 	public SharedPreferences prefs;
 	public SQLiteDatabase database;
