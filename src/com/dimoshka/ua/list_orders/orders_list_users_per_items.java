@@ -1,7 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.util.concurrent.ExecutionException;
-
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -27,6 +25,8 @@ import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_export_to_csv;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
+
+import java.util.concurrent.ExecutionException;
 
 public class orders_list_users_per_items extends class_activity_extends {
 
@@ -93,7 +93,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 				.rawQuery(
 						"SELECT orders._id, users.name as name_u, users._id as id_u, number, categories._id as id_cat, categories.name as name_cat, status.name as name_st from orders left join users on orders.id_u=users._id left join categories on orders.id_cat=categories._id left join status on orders.id_st=status._id where orders.id_it='"
 								+ id_it
-								+ "' and status.show=1 group by id_u order by name_u asc",
+								+ "' and status.show=1 group by id_u order by orders.date asc",
 						null);
 		startManagingCursor(cursor);
 	}

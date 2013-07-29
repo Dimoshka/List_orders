@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.dimoshka.ua.list_orders"
-          android:versionCode="59"
-          android:versionName="1.0.2">
+          android:versionCode="60"
+          android:versionName="1.0.5">
 
     <uses-sdk
-            android:minSdkVersion="7"
+            android:minSdkVersion="11"
             android:targetSdkVersion="15"/>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
