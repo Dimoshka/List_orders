@@ -1,5 +1,17 @@
 package com.dimoshka.ua.classes;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.Environment;
+import android.telephony.SmsManager;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.bugsense.trace.BugSenseHandler;
+import com.dimoshka.ua.list_orders.R;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,17 +22,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
-
-import com.dimoshka.ua.list_orders.R;
-
-import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.Environment;
-import android.telephony.SmsManager;
-import android.util.Log;
-import android.widget.Toast;
 
 public class class_function extends Activity {
 
@@ -38,6 +39,16 @@ public class class_function extends Activity {
 			return false;
 		}
 	}
+
+    public void send_bug_report(Context context, Exception ex,
+                                String class_name, Integer num_row) {
+        Log.e(context.getString(R.string.app_name) + " - error " + class_name,
+                ex.toString() + " - " + num_row);
+        BugSenseHandler.addCrashExtraData("class_name", class_name.toString());
+        BugSenseHandler.addCrashExtraData("num_row", num_row.toString());
+        BugSenseHandler.sendException(ex);
+    }
+
 
 	@SuppressLint("SimpleDateFormat")
 	public void file_backup(Context context, String file_name) {

@@ -1,7 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.io.File;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -10,8 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.bugsense.trace.BugSenseHandler;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_function;
+
+import java.io.File;
 
 public class main extends class_activity_extends {
 
@@ -24,8 +25,10 @@ public class main extends class_activity_extends {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+        super.onCreate(savedInstanceState);
+        BugSenseHandler.initAndStartSession(this, "11fa22af");
+        BugSenseHandler.setLogging(100);
+        setContentView(R.layout.main);
 		font_size();
 	}
 

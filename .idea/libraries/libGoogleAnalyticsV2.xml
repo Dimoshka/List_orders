@@ -2,6 +2,7 @@
   <library name="libGoogleAnalyticsV2">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/libs/libGoogleAnalyticsV2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../bugsense3.4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
