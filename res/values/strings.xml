@@ -40,7 +40,10 @@
     <string name="number">Quantity</string>
     <string name="status">Status</string>
     <string name="status_set">Assign status</string>
-    <string name="show">Показывать</string>
+    <string name="show">Show</string>
+    <string name="sort">Sort</string>
+    <string name="sort_name">Sort by name</string>
+    <string name="sort_date">Sort by date</string>
     <string name="code">Code</string>
     <string name="main">List of orders</string>
     <string name="restory">Backups</string>

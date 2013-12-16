@@ -1,14 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-
-import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_function;
-
 import android.R.layout;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -25,6 +16,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.dimoshka.ua.classes.class_activity_extends;
+import com.dimoshka.ua.classes.class_function;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 public class backup_db extends class_activity_extends {
 
 	private class_function funct = new class_function();
@@ -39,6 +40,9 @@ public class backup_db extends class_activity_extends {
 
 		Button b = (Button) findViewById(R.id.b_add);
 		b.setText(R.string.add);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		listView = (ListView) findViewById(R.id.list);
 		registerForContextMenu(listView);

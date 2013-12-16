@@ -30,6 +30,9 @@
     <string name="status">Статус</string>
     <string name="status_set">Присвоить статус</string>
     <string name="show">Показывать</string>
+    <string name="sort">Сортировать</string>
+    <string name="sort_name">Сортировать по имени</string>
+    <string name="sort_date">Сортировать по дате</string>
     <string name="code">Код</string>
     <string name="main">Список заказов</string>
     <string name="restory">Резервные копии</string>

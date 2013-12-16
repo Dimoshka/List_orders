@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -39,7 +40,10 @@ public class orders_details extends class_activity_extends {
 		id_cat = extras.getInt("id_cat");
 		id_u = extras.getInt("id_u");
 
-		setContentView(R.layout.orders_details);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+
+		setContentView(R.layout.list);
 		listView = (ListView) findViewById(R.id.list);
 		class_sqlite dbOpenHelper = new class_sqlite(this,
 				getString(R.string.db_name),

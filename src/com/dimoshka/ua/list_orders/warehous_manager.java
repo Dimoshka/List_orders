@@ -1,9 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
-import com.dimoshka.ua.classes.class_sqlite;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,6 +10,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.dimoshka.ua.classes.class_activity_extends;
+import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
+import com.dimoshka.ua.classes.class_sqlite;
 
 public class warehous_manager extends class_activity_extends {
 	private Spinner s_items_type;
@@ -27,6 +28,9 @@ public class warehous_manager extends class_activity_extends {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.warehous_manager);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		s_items_type = (Spinner) findViewById(R.id.s_items_type);
 		s_items = (Spinner) findViewById(R.id.s_items);

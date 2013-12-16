@@ -1,7 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.util.concurrent.ExecutionException;
-
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
@@ -21,19 +19,19 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_export_to_csv;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
+import java.util.concurrent.ExecutionException;
+
 public class orders_list_items extends class_activity_extends {
 
 	private ListView listView;
-	TextView t1;
-	TextView t2;
 	private Cursor cursor;
 	private class_simplecursoradapter_textsize scAdapter;
 
@@ -44,12 +42,19 @@ public class orders_list_items extends class_activity_extends {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		Bundle extras = getIntent().getExtras();
+
 		id_cat = extras.getInt("id_cat");
 		name = extras.getString("name");
-		setContentView(R.layout.orders_details);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        actionBar.setTitle(name);
+        actionBar.setSubtitle(R.string.orders_list);
+
+		setContentView(R.layout.list);
 		listView = (ListView) findViewById(R.id.list);
-		t1 = (TextView) findViewById(R.id.text1);
-		t2 = (TextView) findViewById(R.id.text2);
+
+
 		class_sqlite dbOpenHelper = new class_sqlite(this,
 				getString(R.string.db_name),
 				Integer.valueOf(getString(R.string.db_version)));
@@ -82,9 +87,6 @@ public class orders_list_items extends class_activity_extends {
 						"2"));
 
 		listView.setAdapter(scAdapter);
-
-		t1.setText(name);
-		t2.setText(R.string.orders_list);
 	}
 
 	@SuppressWarnings("deprecation")

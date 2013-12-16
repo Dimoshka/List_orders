@@ -15,12 +15,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_export_to_csv;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
@@ -31,14 +32,16 @@ import java.util.concurrent.ExecutionException;
 public class orders_list_users_per_items extends class_activity_extends {
 
 	private ListView listView;
-	TextView t1;
-	TextView t2;
 	private Cursor cursor;
 	private class_simplecursoradapter_textsize scAdapter;
+    private ArrayAdapter<String> sc_sort;
+
 
 	private int id_it = 0;
 	private int id_cat = 0;
 	private String name = "";
+
+    private Spinner s_sort;
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -46,10 +49,16 @@ public class orders_list_users_per_items extends class_activity_extends {
 		id_it = extras.getInt("id_it");
 		id_cat = extras.getInt("id_cat");
 		name = extras.getString("name");
-		setContentView(R.layout.orders_details);
-		listView = (ListView) findViewById(R.id.list);
-		t1 = (TextView) findViewById(R.id.text1);
-		t2 = (TextView) findViewById(R.id.text2);
+		setContentView(R.layout.list_spinner);
+
+
+       ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        actionBar.setTitle(name);
+        actionBar.setSubtitle(R.string.orders_list);
+
+        listView = (ListView) findViewById(R.id.list);
+        s_sort = (Spinner) findViewById(R.id.s_categoryes);
 		class_sqlite dbOpenHelper = new class_sqlite(this,
 				getString(R.string.db_name),
 				Integer.valueOf(getString(R.string.db_version)));
@@ -69,9 +78,28 @@ public class orders_list_users_per_items extends class_activity_extends {
 			}
 		});
 
+        s_sort.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                reload();
+            }
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        load_sort();
 		reload();
 		registerForContextMenu(listView);
 	}
+
+    private void load_sort() {
+              sc_sort = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item , new String[] {getResources().getString(R.string.sort_name), getResources().getString(R.string.sort_date)});
+        s_sort.setAdapter(sc_sort);
+    }
 
 	private void reload() {
 
@@ -81,19 +109,29 @@ public class orders_list_users_per_items extends class_activity_extends {
 						"name_st" }, new int[] { R.id.text1, R.id.text2,
 						R.id.text3 }, prefs.getString("font_size", "2"));
 		listView.setAdapter(scAdapter);
-
-		t1.setText(name);
-		t2.setText(R.string.orders_list);
 	}
 
 	@SuppressWarnings("deprecation")
 	private void get_cursor_all_orders_of_items() {
 		stopManagingCursor(cursor);
-		cursor = database
+String sort ="";
+
+        sort="users.name";
+
+       switch (s_sort.getSelectedItemPosition()) {
+           case 0:
+               sort="users.name";
+              break;
+           case 1:
+               sort="orders.date";
+               break;
+       }
+
+        cursor = database
 				.rawQuery(
 						"SELECT orders._id, users.name as name_u, users._id as id_u, number, categories._id as id_cat, categories.name as name_cat, status.name as name_st from orders left join users on orders.id_u=users._id left join categories on orders.id_cat=categories._id left join status on orders.id_st=status._id where orders.id_it='"
 								+ id_it
-								+ "' and status.show=1 group by id_u order by orders.date asc",
+								+ "' and status.show=1 group by id_u order by " + sort +" asc",
 						null);
 		startManagingCursor(cursor);
 	}

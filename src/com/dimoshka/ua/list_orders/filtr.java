@@ -1,10 +1,5 @@
 package com.dimoshka.ua.list_orders;
 
-import java.util.ArrayList;
-
-import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_sqlite;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,6 +7,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.actionbarsherlock.app.ActionBar;
+import com.dimoshka.ua.classes.class_activity_extends;
+import com.dimoshka.ua.classes.class_sqlite;
+
+import java.util.ArrayList;
 
 public class filtr extends class_activity_extends {
 
@@ -27,6 +28,9 @@ public class filtr extends class_activity_extends {
 		if (extras.isEmpty() == false) {
 			table = extras.getString("table");
 		}
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		listView = (ListView) findViewById(R.id.list);
 		class_sqlite dbOpenHelper = new class_sqlite(this,

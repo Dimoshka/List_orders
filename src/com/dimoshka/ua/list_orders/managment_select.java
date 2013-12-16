@@ -18,6 +18,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -37,20 +38,8 @@ public class managment_select extends class_activity_extends {
 				Bundle extras = getIntent().getExtras();
 		id_type = extras.getInt("id_type");
 
-		switch (id_type) {
-		case 1:
-			// title.setText(R.string.l_users_group);
-			break;
-		case 2:
-			// title.setText(R.string.l_items_type);
-			break;
-		case 3:
-			// title.setText(R.string.l_orders_status);
-			break;
-		default:
-			// title.setText(R.string.l_managment_select);
-			break;
-		}
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		listView = (ListView) findViewById(R.id.list);
 		class_sqlite dbOpenHelper = new class_sqlite(this,
