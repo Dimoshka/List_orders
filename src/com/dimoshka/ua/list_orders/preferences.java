@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceManager;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 
 public class preferences extends SherlockPreferenceActivity {
@@ -18,8 +17,8 @@ public class preferences extends SherlockPreferenceActivity {
 		PreferenceManager.setDefaultValues(preferences.this, R.xml.preferences,
 				true);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		Preference filtr_it_t = (Preference) findPreference("filtr_it_t");
 		filtr_it_t

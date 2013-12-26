@@ -26,7 +26,7 @@ public class class_activity_extends extends SherlockActivity {
 	public void onStart() {
 		super.onStart();
 		if (prefs.getBoolean("c_mn_analytics", true)) {
-			EasyTracker.getInstance().activityStart(this);
+			EasyTracker.getInstance(this).activityStart(this);
 		}
 
 	}
@@ -35,7 +35,7 @@ public class class_activity_extends extends SherlockActivity {
 	public void onStop() {
 		super.onStop();
 		if (prefs.getBoolean("c_mn_analytics", true)) {
-			EasyTracker.getInstance().activityStop(this);
+			EasyTracker.getInstance(this).activityStop(this);
 		}
 
 	}

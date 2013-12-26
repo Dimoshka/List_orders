@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.dimoshka.ua.list_orders"
-          android:versionCode="60"
-          android:versionName="1.0.5">
+          android:versionCode="61"
+          android:versionName="1.0.6">
 
     <uses-sdk
             android:minSdkVersion="11"
-            android:targetSdkVersion="15"/>
+            android:targetSdkVersion="16"/>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -26,7 +26,7 @@
             android:logo="@drawable/ic_launcher"
             android:restoreAnyVersion="true"
             android:restoreNeedsApplication="true"
-            android:theme="@style/Theme.Sherlock.Light"
+            android:theme="@style/jwp"
             android:vmSafeMode="true">
         <activity
                 android:name="com.dimoshka.ua.list_orders.main"

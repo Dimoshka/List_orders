@@ -12,8 +12,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -32,8 +30,8 @@ public class orders extends class_activity_extends {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_spinner);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
         listView = (ListView) findViewById(R.id.list);
         s_categoryes = (Spinner) findViewById(R.id.s_categoryes);

@@ -16,7 +16,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_function;
 
@@ -41,8 +40,8 @@ public class backup_db extends class_activity_extends {
 		Button b = (Button) findViewById(R.id.b_add);
 		b.setText(R.string.add);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		listView = (ListView) findViewById(R.id.list);
 		registerForContextMenu(listView);

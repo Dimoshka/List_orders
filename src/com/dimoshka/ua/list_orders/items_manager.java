@@ -10,7 +10,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_barcode_intentintegrator;
 import com.dimoshka.ua.classes.class_barcode_intentresult;
@@ -36,8 +35,8 @@ public class items_manager extends class_activity_extends {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.items_manager);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		Bundle extras = getIntent().getExtras();
 		id_it = extras.getLong("id_it");

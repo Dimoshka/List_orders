@@ -53,7 +53,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 
 
        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
         actionBar.setTitle(name);
         actionBar.setSubtitle(R.string.orders_list);
 

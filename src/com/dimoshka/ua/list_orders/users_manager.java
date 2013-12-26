@@ -11,7 +11,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -42,8 +41,8 @@ public class users_manager extends class_activity_extends {
 		name_u = extras.getString("name_u");
 		id_u_c = extras.getInt("id_u_c");
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		s_users_group = (Spinner) findViewById(R.id.s_users_group);
 		s_users_contact = (Spinner) findViewById(R.id.s_users_contact);

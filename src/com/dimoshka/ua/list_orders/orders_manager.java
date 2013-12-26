@@ -15,7 +15,6 @@ import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -57,8 +56,8 @@ public class orders_manager extends class_activity_extends {
             id_cat = extras.getInt("id_cat");
         }
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
         s_items = (Spinner) findViewById(R.id.s_items);
         s_items_type = (Spinner) findViewById(R.id.s_items_type);

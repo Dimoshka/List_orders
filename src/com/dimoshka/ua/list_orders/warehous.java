@@ -16,8 +16,6 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-
-import com.actionbarsherlock.app.ActionBar;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
@@ -33,8 +31,8 @@ public class warehous extends class_activity_extends {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 
 		listView = (ListView) findViewById(R.id.list);
 		class_sqlite dbOpenHelper = new class_sqlite(this,

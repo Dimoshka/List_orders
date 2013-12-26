@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.ActionBar;
 import com.bugsense.trace.BugSenseHandler;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_function;
@@ -31,8 +30,8 @@ public class main extends class_activity_extends {
         BugSenseHandler.setLogging(100);
         setContentView(R.layout.main);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
+        //ActionBar actionBar = getSupportActionBar();
+        //actionBar.setBackgroundDrawable(getResources().getDrawable(R.color.orange));
 		font_size();
 	}
 
