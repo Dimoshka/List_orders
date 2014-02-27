@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_very_small">3pt</dimen>
-    <dimen name="text_small">4pt</dimen>
-    <dimen name="text_medium">5pt</dimen>
-    <dimen name="text_large">6pt</dimen>
-</resources>
