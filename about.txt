@@ -1,0 +1,17 @@
+Список заказов - программа для управления заказами.
+Каждый заказ имеет заказчика, предмет и статус.
+Предметы классифицируются по категориям.
+Пользователи такте классифицируются категориями и к ним прикрепляется контакт, из записной книжки.
+
+Удобно для ведения заказов в маленьком магазине или складе.
+Любые предложения принимаются.
+
+
+
+List of orders - a program to control orders.
+Each order has a customer, item, and status.
+Items are classified by categories.
+Members stroke classified categories and attached to them a contact from the phonebook.
+
+It is convenient for the conduct of orders in a small shop or warehouse.
+Any suggestions are accepted.
