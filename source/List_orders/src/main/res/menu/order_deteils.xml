@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dimoshka.ua.jwp.main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <item
+        android:id="@+id/item0"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="ifRoom"
+        android:title="@string/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <item
+        android:id="@+id/item1"
+        android:icon="@android:drawable/ic_menu_revert"
+        app:showAsAction="ifRoom"
+        android:title="@string/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <item
+        android:id="@+id/item2"
+        android:icon="@android:drawable/ic_menu_crop"
+        app:showAsAction="ifRoom"
+        android:title="@string/filtr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</menu>

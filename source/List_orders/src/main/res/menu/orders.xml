@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.dimoshka.ua.jwp.main"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <item
+        android:id="@+id/add"
+        android:title="@string/add"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <item
+        android:id="@+id/orders_list"
+        android:title="@string/orders_list"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <item
+        android:id="@+id/filtr"
+        android:title="@string/filtr"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_crop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <item
+        android:id="@+id/orders_status"
+        android:title="@string/orders_status"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_directions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <item
+        android:id="@+id/refresh"
+        android:title="@string/refresh"
+        app:showAsAction="ifRoom"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</menu>
