@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -17,13 +18,11 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_export_to_csv;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 import java.util.concurrent.ExecutionException;
@@ -32,7 +31,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 
     private ListView listView;
     private Cursor cursor;
-    private class_simplecursoradapter_textsize scAdapter;
+    private SimpleCursorAdapter scAdapter;
     private ArrayAdapter<String> sc_sort;
 
 
@@ -99,16 +98,15 @@ public class orders_list_users_per_items extends class_activity_extends {
     private void reload() {
 
         get_cursor_all_orders_of_items();
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        scAdapter = new SimpleCursorAdapter(this,
                 R.layout.row_list_3, cursor, new String[]{"name_u", "number",
                 "name_st"}, new int[]{R.id.text1, R.id.text2,
-                R.id.text3}, prefs.getString("font_size", "2"));
+                R.id.text3}, 0
+        );
         listView.setAdapter(scAdapter);
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_orders_of_items() {
-        stopManagingCursor(cursor);
         String sort = "";
 
         sort = "users.name";
@@ -127,8 +125,8 @@ public class orders_list_users_per_items extends class_activity_extends {
                         "SELECT orders._id, users.name as name_u, users._id as id_u, number, categories._id as id_cat, categories.name as name_cat, status.name as name_st from orders left join users on orders.id_u=users._id left join categories on orders.id_cat=categories._id left join status on orders.id_st=status._id where orders.id_it='"
                                 + id_it
                                 + "' and status.show=1 group by id_u order by " + sort + " asc",
-                        null);
-        startManagingCursor(cursor);
+                        null
+                );
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -189,7 +187,6 @@ public class orders_list_users_per_items extends class_activity_extends {
         startActivity(i);
     }
 
-    @SuppressWarnings("deprecation")
     private void set_status(final long id_or) {
         try {
             final Cursor cursor_st;
@@ -199,7 +196,7 @@ public class orders_list_users_per_items extends class_activity_extends {
 
             SimpleCursorAdapter Adapt_status = new SimpleCursorAdapter(this,
                     android.R.layout.simple_spinner_item, cursor_st,
-                    new String[]{"name"}, new int[]{android.R.id.text1});
+                    new String[]{"name"}, new int[]{android.R.id.text1}, 0);
             Adapt_status
                     .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -233,14 +230,16 @@ public class orders_list_users_per_items extends class_activity_extends {
                             }
 
                         }
-                    });
+                    }
+            );
 
             alert.setNegativeButton(android.R.string.cancel,
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             return;
                         }
-                    });
+                    }
+            );
             alert.show();
         } catch (Exception e) {
             Log.w("Dimoshka", e.toString());

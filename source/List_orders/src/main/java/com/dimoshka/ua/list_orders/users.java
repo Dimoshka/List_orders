@@ -6,6 +6,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,21 +19,19 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class users extends class_activity_extends {
 
     private ListView listView;
-    private class_simplecursoradapter_textsize scAdapter;
+    private SimpleCursorAdapter sca_list;
     private Cursor cursor;
 
     private int id_u_g = 0;
     private Cursor cursor_u_g;
-    private class_simplecursoradapter_textsize sc_u_g;
+    private SimpleCursorAdapter sca_u_g;
     private Spinner s_categoryes;
 
-    @SuppressWarnings("deprecation")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +50,6 @@ public class users extends class_activity_extends {
         if (id_u_g > 0) {
             for (int i = 0; i < s_categoryes.getCount(); i++) {
                 Cursor cc = (Cursor) s_categoryes.getItemAtPosition(i);
-                startManagingCursor(cc);
                 if (cc.getInt(cc.getColumnIndex("_id")) == id_u_g) {
                     s_categoryes.setSelection(i);
                     break;
@@ -60,12 +58,12 @@ public class users extends class_activity_extends {
 
         }
 
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        sca_list = new SimpleCursorAdapter(this,
                 R.layout.row_list_3, cursor, new String[]{"name", "number",
                 "name_u_g"}, new int[]{R.id.text1, R.id.text2,
-                R.id.text3}, prefs.getString("font_size", "2")
+                R.id.text3}, 0
         );
-        listView.setAdapter(scAdapter);
+        listView.setAdapter(sca_list);
         registerForContextMenu(listView);
 
         s_categoryes.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -96,35 +94,29 @@ public class users extends class_activity_extends {
 
     }
 
-    @SuppressWarnings("deprecation")
     private void load_groups() {
-        stopManagingCursor(cursor_u_g);
         cursor_u_g = database.query("users_group",
                 new String[]{"_id", "name"}, null, null, null, null, "name");
-        startManagingCursor(cursor_u_g);
-        sc_u_g = new class_simplecursoradapter_textsize(this,
+        sca_u_g = new SimpleCursorAdapter(this,
                 android.R.layout.simple_spinner_item, cursor_u_g,
                 new String[]{"name"}, new int[]{android.R.id.text1},
-                prefs.getString("font_size", "2"));
-        sc_u_g.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s_categoryes.setAdapter(sc_u_g);
+                0);
+        sca_u_g.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        s_categoryes.setAdapter(sca_u_g);
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_users() {
-        stopManagingCursor(cursor);
         id_u_g = cursor_u_g.getInt(cursor_u_g.getColumnIndex("_id"));
         cursor = database
                 .rawQuery(
                         "SELECT users._id, users.name, ord.number, users.id_group, users.id_contact, users_group.name as name_u_g from users left join (select count(*) as number, id_u from orders left join status on orders.id_st=status._id where status.show=1 group by orders.id_u) as ord on users._id=ord.id_u left join users_group on users.id_group=users_group._id where users.id_group="
                                 + id_u_g + " order by users.name asc", null
                 );
-        startManagingCursor(cursor);
     }
 
     private void reload() {
         get_cursor_all_users();
-        scAdapter.changeCursor(cursor);
+        sca_list.changeCursor(cursor);
     }
 
     public void b_add() {

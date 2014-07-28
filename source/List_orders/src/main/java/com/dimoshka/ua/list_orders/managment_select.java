@@ -7,6 +7,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -19,13 +20,12 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class managment_select extends class_activity_extends {
 
     private ListView listView;
-    private class_simplecursoradapter_textsize scAdapter;
+    private SimpleCursorAdapter sca_list;
     private Cursor cursor;
     private long id_edit = 0;
     private int id_type = 0;
@@ -43,11 +43,12 @@ public class managment_select extends class_activity_extends {
                 Integer.valueOf(getString(R.string.db_version)));
         database = dbOpenHelper.openDataBase();
         get_cursor_all_data();
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        sca_list = new SimpleCursorAdapter(this,
                 R.layout.row_list_2_horizontal, cursor, new String[]{"name",
                 "number"}, new int[]{R.id.text1, R.id.text2},
-                prefs.getString("font_size", "2"));
-        listView.setAdapter(scAdapter);
+                0
+        );
+        listView.setAdapter(sca_list);
         registerForContextMenu(listView);
 
         listView.setOnItemClickListener(new OnItemClickListener() {
@@ -74,10 +75,7 @@ public class managment_select extends class_activity_extends {
 
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_data() {
-        stopManagingCursor(cursor);
-
         switch (id_type) {
             case 1:
                 cursor = database
@@ -98,13 +96,11 @@ public class managment_select extends class_activity_extends {
                                 null);
                 break;
         }
-
-        startManagingCursor(cursor);
     }
 
     private void reload() {
         get_cursor_all_data();
-        scAdapter.changeCursor(cursor);
+        sca_list.changeCursor(cursor);
     }
 
     public void b_add(View v) {
@@ -129,7 +125,6 @@ public class managment_select extends class_activity_extends {
                 break;
             default:
                 break;
-
         }
 
         return false;
@@ -184,7 +179,8 @@ public class managment_select extends class_activity_extends {
                         }
                         reload();
                     }
-                });
+                }
+        );
 
         alert.setNegativeButton(android.R.string.cancel,
                 new DialogInterface.OnClickListener() {
@@ -192,7 +188,8 @@ public class managment_select extends class_activity_extends {
                         id_edit = 0;
                         return;
                     }
-                });
+                }
+        );
 
         alert.show();
         return;

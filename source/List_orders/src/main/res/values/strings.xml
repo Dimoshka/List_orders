@@ -2,7 +2,7 @@
 <resources>
 
     <string name="db_name">list_orders.sqlite</string>
-    <string name="db_version">3</string>
+    <string name="db_version">5</string>
     <string name="app_name">list_orders</string>
 
     <string-array name="font_size_values">

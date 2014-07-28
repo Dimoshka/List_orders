@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class warehous_manager extends class_activity_extends {
@@ -43,10 +43,10 @@ public class warehous_manager extends class_activity_extends {
 
         startManagingCursor(cursor_it_t);
 
-        class_simplecursoradapter_textsize Adapt_users = new class_simplecursoradapter_textsize(
+        SimpleCursorAdapter Adapt_users = new SimpleCursorAdapter(
                 this, R.layout.spinner_layout_item, cursor_it_t,
                 new String[]{"name"}, new int[]{android.R.id.text1},
-                prefs.getString("font_size", "2"));
+                0);
         Adapt_users.setDropDownViewResource(R.layout.spinner_dropdown_item);
         s_items_type.setAdapter(Adapt_users);
 
@@ -72,13 +72,14 @@ public class warehous_manager extends class_activity_extends {
                     "SELECT _id, name from items where id_it_t='"
                             + cursor_it_t.getInt(cursor_it_t
                             .getColumnIndex("_id"))
-                            + "' order by name asc", null);
+                            + "' order by name asc", null
+            );
             startManagingCursor(cursor_it);
 
-            class_simplecursoradapter_textsize Adapt_items = new class_simplecursoradapter_textsize(
+            SimpleCursorAdapter Adapt_items = new SimpleCursorAdapter(
                     this, R.layout.spinner_layout_item, cursor_it,
                     new String[]{"name"}, new int[]{android.R.id.text1},
-                    prefs.getString("font_size", "2"));
+                    0);
             Adapt_items.setDropDownViewResource(R.layout.spinner_dropdown_item);
             s_items.setAdapter(Adapt_items);
 

@@ -7,6 +7,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -15,19 +16,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class orders_details extends class_activity_extends {
 
     private ListView listView;
     private Cursor cursor;
-    private class_simplecursoradapter_textsize scAdapter;
+    private SimpleCursorAdapter scAdapter;
     private int id_u = 0;
     private int id_cat = 0;
 
@@ -44,26 +43,24 @@ public class orders_details extends class_activity_extends {
                 Integer.valueOf(getString(R.string.db_version)));
         database = dbOpenHelper.openDataBase();
         get_cursor_all_orders();
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        scAdapter = new SimpleCursorAdapter(this,
                 R.layout.row_list_5, cursor, new String[]{"name_it",
                 "number", "name_st", "name_it_t", "date"}, new int[]{
                 R.id.text1, R.id.text2, R.id.text3, R.id.text4,
-                R.id.text5}, prefs.getString("font_size", "2"));
+                R.id.text5}, 0
+        );
         listView.setAdapter(scAdapter);
         registerForContextMenu(listView);
 
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_orders() {
         try {
-
             String cat = "";
             if (id_cat > 0)
                 cat = "orders.id_cat='" + id_cat + "' and ";
             else
                 cat = "";
-            stopManagingCursor(cursor);
             cursor = database
                     .rawQuery(
                             "SELECT orders._id, items.name as name_it, items_type.name as name_it_t, number, status.name as name_st, date from orders left join items on orders.id_it=items._id left join items_type on items.id_it_t=items_type._id left join status on orders.id_st=status._id where "
@@ -71,29 +68,23 @@ public class orders_details extends class_activity_extends {
                                     + "id_u='"
                                     + id_u
                                     + "' and status.show=1 order by id_st asc, id_it_t asc, name_it asc",
-                            null);
-
-            startManagingCursor(cursor);
-
+                            null
+                    );
             Cursor cursor_name = null;
-            stopManagingCursor(cursor_name);
-            if (id_cat > 0)
+             if (id_cat > 0)
                 cursor_name = database
                         .rawQuery(
                                 "SELECT users.name as name_u, categories.name as name_cat from users left join categories on categories._id="
                                         + id_cat + " where users._id=" + id_u,
-                                null);
+                                null
+                        );
             else
-
                 cursor_name = database.rawQuery(
                         "SELECT name as name_u from users where _id=" + id_u,
                         null);
-            startManagingCursor(cursor_name);
             cursor_name.moveToFirst();
-
             actionBar.setTitle(cursor_name.getString(cursor_name
                     .getColumnIndex("name_u")));
-
             if (id_cat > 0)
                 actionBar.setSubtitle(cursor_name.getString(cursor_name
                         .getColumnIndex("name_cat")));
@@ -191,7 +182,6 @@ public class orders_details extends class_activity_extends {
                 }).create().show();
     }
 
-    @SuppressWarnings("deprecation")
     private void set_status(final long id_or) {
         try {
             final Cursor cursor_st;
@@ -235,14 +225,16 @@ public class orders_details extends class_activity_extends {
                             }
 
                         }
-                    });
+                    }
+            );
 
             alert.setNegativeButton(android.R.string.cancel,
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             return;
                         }
-                    });
+                    }
+            );
             alert.show();
         } catch (Exception e) {
             Log.w("Dimoshka", e.toString());

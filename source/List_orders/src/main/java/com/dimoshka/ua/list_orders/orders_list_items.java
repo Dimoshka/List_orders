@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -17,13 +18,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_export_to_csv;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 import java.util.concurrent.ExecutionException;
@@ -32,7 +31,7 @@ public class orders_list_items extends class_activity_extends {
 
     private ListView listView;
     private Cursor cursor;
-    private class_simplecursoradapter_textsize scAdapter;
+    private SimpleCursorAdapter sca_list;
 
     private int id_cat = 0;
     private String name = "";
@@ -76,25 +75,23 @@ public class orders_list_items extends class_activity_extends {
 
     private void reload() {
         get_cursor_all_orders();
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        sca_list = new SimpleCursorAdapter(this,
                 R.layout.row_list_3, cursor, new String[]{"name_it",
                 "number", "name_it_t"}, new int[]{R.id.text1,
-                R.id.text2, R.id.text3}, prefs.getString("font_size",
-                "2"));
+                R.id.text2, R.id.text3}, 0
+        );
 
-        listView.setAdapter(scAdapter);
+        listView.setAdapter(sca_list);
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_orders() {
-        stopManagingCursor(cursor);
         cursor = database
                 .rawQuery(
                         "SELECT id_it as _id, items.name as name_it, items._id as id_it, sum(number) as number, items_type.name as name_it_t from orders left join items on orders.id_it=items._id left join items_type on items.id_it_t=items_type._id left join status on orders.id_st=status._id where orders.id_cat='"
                                 + id_cat
                                 + "' and status.show=1 group by id_it order by name_it_t asc, name_it asc",
-                        null);
-        startManagingCursor(cursor);
+                        null
+                );
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -155,7 +152,6 @@ public class orders_list_items extends class_activity_extends {
         return true;
     }
 
-    @SuppressWarnings("deprecation")
     private void set_status(final long id_it) {
         try {
             final Cursor cursor_st;
@@ -184,9 +180,7 @@ public class orders_list_items extends class_activity_extends {
                             try {
                                 ContentValues initialValues = new ContentValues();
                                 initialValues.put("id_st", id_st);
-
                                 Cursor cur = null;
-                                stopManagingCursor(cur);
                                 cur = database
                                         .rawQuery(
                                                 "SELECT orders._id from orders left join status on orders.id_st=status._id where orders.id_cat='"
@@ -194,8 +188,8 @@ public class orders_list_items extends class_activity_extends {
                                                         + "' and orders.id_it="
                                                         + id_it
                                                         + " and status.show=1",
-                                                null);
-                                startManagingCursor(cur);
+                                                null
+                                        );
                                 cur.moveToFirst();
 
                                 for (int i = 0; i < cur.getCount(); i++) {
@@ -215,14 +209,16 @@ public class orders_list_items extends class_activity_extends {
                             }
 
                         }
-                    });
+                    }
+            );
 
             alert.setNegativeButton(android.R.string.cancel,
                     new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             return;
                         }
-                    });
+                    }
+            );
             alert.show();
         } catch (Exception e) {
             Log.w("Dimoshka", e.toString());

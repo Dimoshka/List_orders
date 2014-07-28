@@ -6,6 +6,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
@@ -18,14 +19,13 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class items extends class_activity_extends {
 
     private ListView listView;
-    private class_simplecursoradapter_textsize scAdapter;
-    private class_simplecursoradapter_textsize sc_t;
+    private SimpleCursorAdapter scAdapter;
+    private SimpleCursorAdapter sc_t;
     private Cursor cursor;
 
     private Spinner s_type;
@@ -46,10 +46,10 @@ public class items extends class_activity_extends {
         load_types();
 
         get_cursor_all_items();
-        scAdapter = new class_simplecursoradapter_textsize(this,
+        scAdapter = new SimpleCursorAdapter(this,
                 R.layout.row_list_3, cursor, new String[]{"name", "number",
                 "code"}, new int[]{R.id.text1, R.id.text2,
-                R.id.text3}, prefs.getString("font_size", "2")
+                R.id.text3}, 0
         );
         listView.setAdapter(scAdapter);
         registerForContextMenu(listView);
@@ -81,23 +81,18 @@ public class items extends class_activity_extends {
 
     }
 
-    @SuppressWarnings("deprecation")
     private void load_types() {
-        stopManagingCursor(cursor_t);
         cursor_t = database.query("items_type", new String[]{"_id", "name"},
                 null, null, null, null, "name");
-        startManagingCursor(cursor_t);
-        sc_t = new class_simplecursoradapter_textsize(this,
+        sc_t = new SimpleCursorAdapter(this,
                 android.R.layout.simple_spinner_item, cursor_t,
                 new String[]{"name"}, new int[]{android.R.id.text1},
-                prefs.getString("font_size", "2"));
+                0);
         sc_t.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s_type.setAdapter(sc_t);
     }
 
-    @SuppressWarnings("deprecation")
     private void get_cursor_all_items() {
-        stopManagingCursor(cursor);
         id_it_t = cursor_t.getInt(cursor_t.getColumnIndex("_id"));
         cursor = database
                 .rawQuery(
@@ -105,8 +100,6 @@ public class items extends class_activity_extends {
                         "SELECT items._id, items.name, items.code, ord.number, items.show from items left join items_type on items.id_it_t=items_type._id left join (select sum(number) as number, id_it from orders left join status on orders.id_st=status._id where status.show=1 group by orders.id_it) as ord on items._id=ord.id_it where items_type.show=1 and items.id_it_t="
                                 + id_it_t + " order by items.name asc", null
                 );
-
-        startManagingCursor(cursor);
     }
 
     private void reload() {

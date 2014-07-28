@@ -17,54 +17,53 @@
             android:label="@string/main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.orders_manager"
+            android:name="orders_manager"
             android:label="@string/orders_manager"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.orders"
+            android:name="orders"
             android:label="@string/orders"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.users"
+            android:name="users"
             android:label="@string/users"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.items"
+            android:name="items"
             android:label="@string/items"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.preferences"
+            android:name="preferences"
             android:label="@string/preference"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.orders_details"
+            android:name="orders_details"
             android:label="@string/order_details"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.items_manager"
+            android:name="items_manager"
             android:label="@string/items_manager"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.filtr"
+            android:name="filtr"
             android:label="@string/filtr"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.orders_list_items"
+            android:name="orders_list_items"
             android:label="@string/orders_list_items"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.orders_list_users_per_items"
+            android:name="orders_list_users_per_items"
             android:label="@string/orders_list_users_per_items"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.backup_db"
+            android:name="backup_db"
             android:label="@string/backup"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.warehous"
+            android:name="warehous"
             android:label="@string/warehous"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.warehous_manager"
+            android:name="warehous_manager"
             android:label="@string/warehous_manager"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.users_manager"
+            android:name="users_manager"
             android:label="@string/users_manager"></activity>
         <activity
-            android:name="com.dimoshka.ua.list_orders.managment_select"
+            android:name="managment_select"
             android:label="@string/managment_select"></activity>
     </application>
 

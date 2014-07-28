@@ -29,52 +29,6 @@ public class main extends class_activity_extends {
         BugSenseHandler.initAndStartSession(this, "11fa22af");
         BugSenseHandler.setLogging(100);
         setContentView(R.layout.main);
-        font_size();
-    }
-
-    void font_size() {
-        TextView textView1 = (TextView) findViewById(R.id.textView1);
-        TextView textView2 = (TextView) findViewById(R.id.textView2);
-        TextView textView3 = (TextView) findViewById(R.id.textView3);
-        TextView textView4 = (TextView) findViewById(R.id.textView4);
-        String str = prefs.getString("font_size", "2");
-        if (str.equals("1")) {
-            textView1.setTextSize(getResources().getDimension(
-                    R.dimen.text_very_small));
-            textView2.setTextSize(getResources().getDimension(
-                    R.dimen.text_very_small));
-            textView3.setTextSize(getResources().getDimension(
-                    R.dimen.text_very_small));
-            textView4.setTextSize(getResources().getDimension(
-                    R.dimen.text_very_small));
-        } else if (str.equals("2")) {
-            textView1.setTextSize(getResources().getDimension(
-                    R.dimen.text_small));
-            textView2.setTextSize(getResources().getDimension(
-                    R.dimen.text_small));
-            textView3.setTextSize(getResources().getDimension(
-                    R.dimen.text_small));
-            textView4.setTextSize(getResources().getDimension(
-                    R.dimen.text_small));
-        } else if (str.equals("3")) {
-            textView1.setTextSize(getResources().getDimension(
-                    R.dimen.text_medium));
-            textView2.setTextSize(getResources().getDimension(
-                    R.dimen.text_medium));
-            textView3.setTextSize(getResources().getDimension(
-                    R.dimen.text_medium));
-            textView4.setTextSize(getResources().getDimension(
-                    R.dimen.text_medium));
-        } else {
-            textView1.setTextSize(getResources().getDimension(
-                    R.dimen.text_large));
-            textView2.setTextSize(getResources().getDimension(
-                    R.dimen.text_large));
-            textView3.setTextSize(getResources().getDimension(
-                    R.dimen.text_large));
-            textView4.setTextSize(getResources().getDimension(
-                    R.dimen.text_large));
-        }
     }
 
     public void show_orders(View v) {

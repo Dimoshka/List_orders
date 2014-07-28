@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.dimoshka.ua.classes.class_activity_extends;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class users_manager extends class_activity_extends {
@@ -56,10 +56,10 @@ public class users_manager extends class_activity_extends {
                 new String[]{"_id", "name"}, null, null, null, null, "name");
         startManagingCursor(cursor_u_g);
 
-        class_simplecursoradapter_textsize Adapt_users = new class_simplecursoradapter_textsize(
+        SimpleCursorAdapter Adapt_users = new SimpleCursorAdapter(
                 this, android.R.layout.simple_spinner_item, cursor_u_g,
                 new String[]{"name"}, new int[]{android.R.id.text1},
-                prefs.getString("font_size", "2"));
+                0);
         Adapt_users
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s_users_group.setAdapter(Adapt_users);
@@ -69,7 +69,6 @@ public class users_manager extends class_activity_extends {
 
     }
 
-    @SuppressWarnings("deprecation")
     private void edit() {
         if (id_u > 0) {
             Button b = (Button) findViewById(R.id.b_add);
@@ -81,7 +80,6 @@ public class users_manager extends class_activity_extends {
 
                 for (int u = 0; u < s_users_contact.getCount(); u++) {
                     Cursor cu = (Cursor) s_users_contact.getItemAtPosition(u);
-                    startManagingCursor(cu);
                     if (cu.getInt(cu.getColumnIndex("_id")) == id_u_c) {
                         s_users_contact.setSelection(u);
                         break;
@@ -94,7 +92,6 @@ public class users_manager extends class_activity_extends {
 
             for (int u = 0; u < s_users_group.getCount(); u++) {
                 Cursor cu = (Cursor) s_users_group.getItemAtPosition(u);
-                startManagingCursor(cu);
                 if (cu.getLong(cu.getColumnIndex("_id")) == id_u_g) {
                     s_users_group.setSelection(u);
                     break;
@@ -104,26 +101,20 @@ public class users_manager extends class_activity_extends {
         }
     }
 
-    @SuppressWarnings("deprecation")
     private void load_contacts() {
 
         final String[] projection = new String[]{
                 ContactsContract.Contacts._ID,
                 ContactsContract.Contacts.DISPLAY_NAME,
                 ContactsContract.Contacts.HAS_PHONE_NUMBER};
-
-        stopManagingCursor(cursor_u_c);
         cursor_u_c = getContentResolver().query(
                 ContactsContract.Contacts.CONTENT_URI, projection, null, null,
                 "DISPLAY_NAME ASC");
 
-        startManagingCursor(cursor_u_c);
-
-        class_simplecursoradapter_textsize Adapt_users_contact = new class_simplecursoradapter_textsize(
+        SimpleCursorAdapter Adapt_users_contact = new SimpleCursorAdapter(
                 this, android.R.layout.simple_spinner_item, cursor_u_c,
                 new String[]{"DISPLAY_NAME"},
-                new int[]{android.R.id.text1}, prefs.getString("font_size",
-                "2"));
+                new int[]{android.R.id.text1}, 0);
         Adapt_users_contact
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s_users_contact.setAdapter(Adapt_users_contact);

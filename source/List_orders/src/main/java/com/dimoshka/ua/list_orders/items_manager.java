@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.widget.SimpleCursorAdapter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,7 +14,6 @@ import android.widget.Spinner;
 import com.dimoshka.ua.classes.class_activity_extends;
 import com.dimoshka.ua.classes.class_barcode_intentintegrator;
 import com.dimoshka.ua.classes.class_barcode_intentresult;
-import com.dimoshka.ua.classes.class_simplecursoradapter_textsize;
 import com.dimoshka.ua.classes.class_sqlite;
 
 public class items_manager extends class_activity_extends {
@@ -35,7 +35,7 @@ public class items_manager extends class_activity_extends {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.items_manager);
-         Bundle extras = getIntent().getExtras();
+        Bundle extras = getIntent().getExtras();
         id_it = extras.getLong("id_it");
         id_it_t = extras.getInt("id_it_t");
         name_it = extras.getString("name_it");
@@ -62,18 +62,17 @@ public class items_manager extends class_activity_extends {
 
         startManagingCursor(cursor_it_t);
 
-        class_simplecursoradapter_textsize Adapt_users = new class_simplecursoradapter_textsize(
+        SimpleCursorAdapter sca_users = new SimpleCursorAdapter(
                 this, android.R.layout.simple_spinner_item, cursor_it_t,
                 new String[]{"name"}, new int[]{android.R.id.text1},
-                prefs.getString("font_size", "2"));
-        Adapt_users
+                0);
+        sca_users
                 .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s_items_type.setAdapter(Adapt_users);
+        s_items_type.setAdapter(sca_users);
 
         edit();
     }
 
-    @SuppressWarnings("deprecation")
     private void edit() {
         if (id_it > 0) {
             Button b = (Button) findViewById(R.id.b_add);
@@ -84,7 +83,6 @@ public class items_manager extends class_activity_extends {
 
             for (int u = 0; u < s_items_type.getCount(); u++) {
                 Cursor cu = (Cursor) s_items_type.getItemAtPosition(u);
-                startManagingCursor(cu);
                 if (cu.getLong(cu.getColumnIndex("_id")) == id_it_t) {
                     s_items_type.setSelection(u);
                     break;
