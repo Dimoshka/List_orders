@@ -21,16 +21,16 @@ android {
         release {
             keyAlias 'list_orders'
             keyPassword 'Dimoshka9101'
-            storeFile file('H:/Work/Android/Keystore/dimoshka.jks')
+            storeFile file('H:/Workspace/android/keys/dimoshka.jks')
             //storeFile file('/media/dimoshka/DIMOSHKA/Work/Android/Keystore/dimoshka.jks')
             storePassword 'Dimoshka9101'
         }
         debug {
             keyAlias 'debug'
-            keyPassword '12345678'
-            storeFile file('H:/Work/Android/Keystore/debug.jks')
+            keyPassword '1234567890'
+            storeFile file('H:/Workspace/android/keys/debug.jks')
             //storeFile file('/media/dimoshka/DIMOSHKA/Work/Android/Keystore/debug.jks')
-            storePassword '12345678'
+            storePassword '1234567890'
         }
     }
 

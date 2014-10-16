@@ -13,6 +13,7 @@
         <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugJava" />
         <option name="ASSEMBLE_TEST_TASK_NAME" value="assembleDebugTest" />
         <option name="SOURCE_GEN_TASK_NAME" value="generateDebugSources" />
+        <option name="TEST_SOURCE_GEN_TASK_NAME" value="generateDebugTestSources" />
         <option name="ALLOW_USER_CONFIGURATION" value="false" />
         <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
         <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
@@ -37,45 +38,45 @@
       <sourceFolder url="file://$MODULE_DIR$/List_orders/build/generated/res/rs/test/debug" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/debug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/assets" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/aidl" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/assets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/jni" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/assets" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/assets" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/List_orders/src/androidTest/rs" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/apk" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/assets" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/classes-proguard" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/dependency-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/dex" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/exploded-aar" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/exploded-bundles" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/incremental" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/libs" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/manifests" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/ndk" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/bundles" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/classes" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/coverage-instrumented-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/dependency-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/dex" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/dex-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/jacoco" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/javaResources" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/libs" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/lint" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/manifests" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/ndk" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/pre-dexed" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/proguard" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/rs" />
+      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/intermediates/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/List_orders/build/outputs" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/pre-dexed" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/proguard" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/res" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/rs" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/source" />
-      <excludeFolder url="file://$MODULE_DIR$/List_orders/build/symbols" />
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
